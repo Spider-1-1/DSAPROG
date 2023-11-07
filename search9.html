@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="div.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div4">
+<pre>
+    #include<stdio.h>
+    #include<time.h>
+    int linear(int arr[],int size,int key)
+    {
+    int i,f=0;
+    for(i=0;i&lt;size;i++)
+    {
+    if(arr[i]==key)
+    {
+    f=1;
+    break;
+    }
+    }
+    if(f==1)
+    {
+    return i;
+    }
+    else
+    {
+    return -1;
+    }
+    }
+    int main()
+    {
+    clock_t start=clock();
+    int key,arr[10],i,index;
+    clock_t end;
+    double cpu_time_used;
+    printf("Enter the arrays\n");
+    for(i=0;i&lt;10;i++)
+    {
+    scanf("%d",&arr[i]);
+    }
+    printf("Enter the element\n");
+    scanf("%d",&key);
+    index =linear(arr,10,key);
+    if(index!=-1)
+    {
+    printf("Element found at index %d\n",index+1);
+    }
+    else
+    {
+    printf("Element is not found\n");
+    }
+    if(index==0)
+    {
+    printf("Best complexity of linear search\n");
+    }
+    else
+    {
+    printf("Worst complexity of linear search\n");
+    }
+    end=clock();
+    cpu_time_used=((double)(end-start))/CLOCKS_PER_SEC;
+    printf("Time taken for search: %lf seconds\n",cpu_time_used);
+    }
+</pre>
+    </div>
+    <div id="div5">
+<pre>
+    Enter the arrays
+    1
+    4
+    3
+    7
+    6
+    9
+    0
+    7
+    5
+    32
+    Enter the element
+    6
+    Element found at index 5
+    Worst complexity of linear search
+    Time taken for search: 12.599000 seconds
+</pre>
+    </div>
+</body>
+</html>
